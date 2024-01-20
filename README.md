@@ -40,5 +40,3 @@ Note: Paymee was built upon an existing boilerplate project. While the original 
 Happy transacting on Paymee – your gateway to stablecoin payments on the ICP blockchain!
 
 ---
-
-*This README is designed for the Paymee project and should be placed in the GitHub repository to guide users and contributors.*

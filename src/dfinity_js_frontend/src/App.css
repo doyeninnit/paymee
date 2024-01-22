@@ -6,3 +6,26 @@
 .vh-80 {
   height: 80vh!important;
 }
+
+
+.main-content {
+  min-height: 80vh; /* Adjust based on your content */
+  padding-bottom: 60px; /* Ensure enough space for the navbar */
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.balance-display {
+  text-align: center;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.app-container {
+  padding: 0; /* Removes default padding if any */
+}
+
+/* Add any additional styling you need here */

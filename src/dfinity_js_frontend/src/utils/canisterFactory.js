@@ -4,7 +4,7 @@ import { idlFactory as ledgerIDL } from "../../../declarations/ledger_canister/l
 
 const MARKETPLACE_CANISTER_ID = "be2us-64aaa-aaaaa-qaabq-cai";
 const LEDGER_CANISTER_ID = "ryjl3-tyaaa-aaaaa-aaaba-cai";
-const HOST = "https://crispy-halibut-46r5jgxqx9pfj54j-4943.app.github.dev/";
+const HOST = "https://laughing-space-carnival-7wx6vrg7gjg2vqx-4943.app.github.dev/";
 
 export async function getMarketplaceCanister() {
     return await getCanister(MARKETPLACE_CANISTER_ID, marketPlaceIDL);

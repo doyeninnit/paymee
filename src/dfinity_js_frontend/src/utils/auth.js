@@ -5,7 +5,7 @@ import RegistrationForm from "../components/marketplace/register";
 import ReactDOM from 'react-dom';
 
 // that is the url of the webapp for the internet identity. 
-const IDENTITY_PROVIDER = `https://crispy-halibut-46r5jgxqx9pfj54j-4943.app.github.dev/?canisterId=bd3sg-teaaa-aaaaa-qaaba-cai#authorize`;
+const IDENTITY_PROVIDER = `https://laughing-space-carnival-7wx6vrg7gjg2vqx-4943.app.github.dev/?canisterId=bnz7o-iuaaa-aaaaa-qaaaa-cai&id=bd3sg-teaaa-aaaaa-qaaba-cai#authorize`;
 const MAX_TTL = 7 * 24 * 60 * 60 * 1000 * 1000 * 1000;
 
 export async function getAuthClient() {
@@ -47,3 +47,4 @@ function showRegistrationForm() {
 
     ReactDOM.render(<RegistrationForm />, container);
 }
+

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { transferICP } from '../../utils/ledger';
-import { sendUSD, getUserName } from '../../utils/marketplace';
+import { sendUSD, getUserName, sendUSDN} from '../../utils/marketplace';
 
 const SendICP = () => {
     const [sellerNumber, setSellerNumber] = useState("");
@@ -40,7 +40,9 @@ const SendICP = () => {
         const amountBigInt = BigInt(Math.floor(parseFloat(amount) * 100000000));
         // Convert sellerNumber to BigInt to properly represent nat64
         const sellerNumberBigInt = BigInt(sellerNumber);
-            const result = await sendUSD(sellerNumberBigInt, amountBigInt);
+            // const result = await sendUSD(sellerNumberBigInt, amountBigInt);
+            const result = await sendUSDN(sellerNumberBigInt, amountBigInt);
+
             console.log(result)
             setTransferStatus(`Transfer successful to ${userName}`);
         } catch (error) {
@@ -48,40 +50,7 @@ const SendICP = () => {
         }
     };
 
-//     return (
-//         <div>
-//             <h2>Send ICP</h2>
-//             <form onSubmit={handleTransfer}>
-//                 <div>
-//                     <label>Seller Number:</label>
-//                     <input
-//                         type="number"
-//                         value={sellerNumber}
-//                         onChange={(e) => setSellerNumber(e.target.value)}
-//                         required
-//                     />
-//                 </div>
-//                 <div>
-//                     <label>Amount (ICP):</label>
-//                     <input
-//                         type="number"
-//                         value={amount}
-//                         onChange={(e) => setAmount(e.target.value)}
-//                         required
-//                     />
-//                 </div>
-//                 {confirmPayment && (
-//                     <div>
-//                         <p>Confirm payment to: {userName}</p>
-//                         <button type="button" onClick={() => setConfirmPayment(false)}>Change Details</button>
-//                     </div>
-//                 )}
-//                 <button type="submit">{confirmPayment ? 'Confirm Payment' : 'Verify Recipient'}</button>
-//             </form>
-//             {transferStatus && <p>{transferStatus}</p>}
-//         </div>
-//     );
-// };
+
 
 const styles = {
     container: {

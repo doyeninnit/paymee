@@ -1,5 +1,6 @@
 import { Principal } from "@dfinity/principal";
 import { transferICP } from "./ledger";
+import { transferTokens } from "./usdnledger";
 
 export async function createProduct(product) {
   return window.canister.marketplace.addProduct(product);
@@ -52,6 +53,15 @@ export async function sendUSD(number, amount) {
   const sellerPrincipal = Principal.from(orderResponse.Ok.wallet);
   const sellerAddress = await marketplaceCanister.getAddressFromPrincipal(sellerPrincipal);
   const block = await transferICP(sellerAddress, amount, 0);
+  console.log(block)
+}
+
+export async function sendUSDN(number, amount) {
+  const marketplaceCanister = window.canister.marketplace;
+  const orderResponse = await marketplaceCanister.getUser(number);
+  const sellerPrincipal = Principal.from(orderResponse.Ok.wallet);
+  const sellerAddress = await marketplaceCanister.getAddressFromPrincipal(sellerPrincipal);
+  const block = await transferTokens(sellerAddress, amount, 0);
   console.log(block)
 }
 
